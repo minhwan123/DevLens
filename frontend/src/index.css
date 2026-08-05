@@ -1,0 +1,60 @@
+:root {
+  --bg: #0a0e14;
+  --bg-surface: #10141b;
+  --bg-elevated: #161b22;
+  --border: #2a2f3a;
+  --border-bright: #3d4552;
+  --text: #c9d1d9;
+  --text-h: #f0f3f6;
+  --text-muted: #7d8590;
+  --accent: #3fb950;
+  --accent-bg: rgba(63, 185, 80, 0.12);
+  --accent-2: #58a6ff;
+  --error: #f85149;
+  --warning: #d29922;
+  --glass-bg: rgba(16, 20, 27, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --ambient-bg: radial-gradient(circle at 12% 8%, rgba(63, 185, 80, 0.22), transparent 42%),
+    radial-gradient(circle at 88% 18%, rgba(88, 166, 255, 0.16), transparent 42%),
+    radial-gradient(circle at 50% 100%, rgba(63, 185, 80, 0.12), transparent 55%), #0a0e14;
+
+  --sans: 'Segoe UI', system-ui, Roboto, sans-serif;
+  --mono: 'Cascadia Code', 'Consolas', ui-monospace, 'SFMono-Regular', monospace;
+
+  font: 16px/1.6 var(--sans);
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ambient-bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+code,
+.mono {
+  font-family: var(--mono);
+}
+
+::selection {
+  background: rgba(63, 185, 80, 0.35);
+}
