@@ -1,20 +1,37 @@
 # DevLens
 
-**Analyze your GitHub. Understand your career.**
+<p align="center">
+  <img src="assets/DevLens.png" alt="DevLens" width="480" />
+</p>
 
-GitHub 사용자명과 목표 직무만 입력하면, 실제 커밋·코드·문서를 근거로 커리어 역량을 분석해 레이더 차트, 직무 적합도, 스킬 갭, 학습 로드맵, AI 코멘터리까지 뽑아주는 웹 서비스입니다.
+<h3 align="center">Analyze your GitHub. Understand your career.</h3>
 
-[![CI](https://github.com/minhwan123/devlens/actions/workflows/ci.yml/badge.svg)](https://github.com/minhwan123/devlens/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](pyproject.toml)
+<p align="center">
+GitHub 사용자명과 목표 직무만 입력하면, 실제 커밋·코드·문서를 근거로 커리어 역량을 분석해<br/>
+레이더 차트, 직무 적합도, 스킬 갭, 학습 로드맵, AI 코멘터리까지 뽑아주는 웹 서비스입니다.
+</p>
 
-> CI 배지는 GitHub에 push한 뒤 저장소 경로(`minhwan123/devlens`)가 실제 경로와 다르면 URL을 맞게 바꿔주세요.
+<p align="center">
+<a href="https://github.com/minhwan123/DevLens/actions/workflows/ci.yml"><img src="https://github.com/minhwan123/DevLens/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
+<a href="pyproject.toml"><img src="https://img.shields.io/badge/python-3.12-blue.svg" alt="Python 3.12" /></a>
+</p>
 
 ## 데모
 
 `minhwan123` 계정을 목표 직무 `AI Engineer`로 실제 분석한 화면입니다 (모의 데이터 아님).
 
-![DevLens demo](assets/demo.gif)
+<video src="assets/demo_video.mp4" controls muted playsinline poster="assets/DevLens.png" width="100%">
+  demo_video.mp4
+</video>
+
+### PDF 리포트 예시
+
+분석이 끝나면 아래처럼 PDF로도 내보낼 수 있습니다.
+
+<p align="center">
+  <img src="assets/pdf_screenshot.png" alt="DevLens PDF 리포트 예시" width="520" />
+</p>
 
 ## 주요 기능
 
