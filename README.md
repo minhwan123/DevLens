@@ -21,9 +21,9 @@ GitHub 사용자명과 목표 직무만 입력하면, 실제 커밋·코드·문
 
 `minhwan123` 계정을 목표 직무 `AI Engineer`로 실제 분석한 화면입니다 (모의 데이터 아님).
 
-<video src="assets/demo_video.mp4" controls muted playsinline poster="assets/DevLens.png" width="100%">
-  demo_video.mp4
-</video>
+![DevLens 데모](assets/demo_video.gif)
+
+원본 화질/음성이 있는 영상은 [demo_video.mp4](assets/demo_video.mp4)에서 바로 재생해볼 수 있습니다.
 
 ### PDF 리포트 예시
 
