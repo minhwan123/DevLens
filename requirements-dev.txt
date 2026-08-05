@@ -1,0 +1,9 @@
+-r requirements.txt
+pytest>=8
+pytest-asyncio>=0.24
+pytest-cov>=5
+mypy>=1.10
+ruff>=0.5
+respx>=0.21
+types-reportlab>=4.0
+pypdf>=4.0
