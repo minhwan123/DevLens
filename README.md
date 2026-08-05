@@ -40,6 +40,9 @@ GitHub 사용자명과 목표 직무만 입력하면, 실제 커밋·코드·문
 - **레이더 변화 추이** — 재분석할 때마다 SQLite에 스냅샷을 남겨 시간에 따른 성장 추이를 시각화
 - **목표 직무 적합도 TOP 3** — 9개 직무(AI Engineer, Data Scientist, Backend 등) 중 가장 잘 맞는 직무와 갭을 함께 제시
 - **근거 기반 스킬 테이블** — 각 스킬의 숙련도와 "어느 레포에서 왜 그렇게 판단했는지" 근거를 함께 표시
+- **강점 / 성장 포인트** — 데이터로 뒷받침되는 강점과 보완이 필요한 영역을 함께 제시
+- **저장소 필터링 근거 공개** — 분석에 어떤 레포가 포함/제외됐는지와 그 기준 점수를 그대로 보여줌
+- **개선 제안 & 학습 로드맵** — 목표 직무까지 가기 위해 무엇을, 어떤 순서로 학습할지 체인 형태로 제시
 - **의미 기반 추천** — Sentence-Transformers 임베딩 + FAISS 유사도 검색으로 프로젝트/스킬/데이터셋을 추천
 - **AI 코멘터리** — Gemini가 강점·성장 포인트·학습 로드맵을 자연어로 요약 (키가 없으면 자동으로 플레이스홀더로 폴백)
 - **PDF 리포트 다운로드** — 분석 결과를 ReportLab으로 렌더링한 리포트로 내보내기
@@ -65,19 +68,20 @@ GitHub 사용자명과 목표 직무만 입력하면, 실제 커밋·코드·문
 
 ```
 devlens/
-├── domain/           # 순수 비즈니스 로직 — 외부 라이브러리에 의존하지 않음
-│   ├── engines/      #   분석 엔진 (GitHub 분석, 커리어 인텔리전스, 로드맵, 역할 적합도 ...)
+├── domain/            # 순수 비즈니스 로직 — 외부 라이브러리에 의존하지 않음
+│   ├── engines/       #   분석 엔진 (GitHub 분석, 커리어 인텔리전스, 개선 제안, 로드맵, 역할 적합도 ...)
 │   ├── models/        #   도메인 모델 (DeveloperProfile, RadarSnapshot, SkillEvidence ...)
-│   └── policies/      #   점수 산정 규칙 (숙련도, 우선순위, 스킬 갭 정책 ...)
-├── application/       # 유스케이스 오케스트레이션 (analyze_repository, generate_career_report ...)
+│   └── policies/      #   점수 산정 규칙 (숙련도, 우선순위, 저장소 필터링, 스킬 갭 정책 ...)
+├── application/       # 유스케이스 오케스트레이션 (analyze_repository, generate_career_report, recommend_learning_path ...)
 ├── infrastructure/    # 외부 연동 구현체
-│   ├── github/         #   GitHub REST API 클라이언트 + 레이트리밋 처리
-│   ├── llm/             #   Gemini 클라이언트 + 응답 캐싱
-│   ├── persistence/     #   Job / Cache / Snapshot 저장소 (SQLite, in-memory)
-│   ├── reporting/       #   PDF 리포트 빌더
-│   └── vector_store/    #   임베딩 모델 + FAISS 유사도 인덱스
+│   ├── github/        #   GitHub REST API 클라이언트 + 레이트리밋 처리
+│   ├── llm/           #   Gemini 클라이언트 + 응답 캐싱
+│   ├── persistence/    #   Job / Cache / Snapshot 저장소 (SQLite, in-memory)
+│   ├── reporting/      #   PDF 리포트 빌더
+│   └── vector_store/   #   임베딩 모델 + FAISS 유사도 인덱스
+├── config/            # 환경설정(Settings) + 도메인 임계값·가중치·직무 요구사항 등 상수
 ├── interface/api/     # FastAPI 진입점 (라우터, 스키마, 의존성 주입)
-└── tests/              # unit / integration / e2e
+└── tests/             # unit / integration / e2e
 
 frontend/
 └── src/
